@@ -1,0 +1,8 @@
+streamlit
+google-cloud-aiplatform
+google-cloud-speech
+google-cloud-texttospeech
+google-api-python-client
+google-auth
+audio-recorder-streamlit
+Pillow
