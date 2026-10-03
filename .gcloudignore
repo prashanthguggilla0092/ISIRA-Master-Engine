@@ -1,0 +1,12 @@
+.gcloudignore
+.git
+.gitignore
+myenv/
+myenv/**
+venv/
+venv/**
+isira-v1.2.6/
+isira-v1.2.6/**
+__pycache__/
+*.pyc
+*.md

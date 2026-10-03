@@ -1,0 +1,1 @@
+# Changelog\n## [1.2.6] - 2026-04-26\n- Architect: Guggilla Prashanth\n- Feature: Added Dynamic Google Sheets Integration\n- Feature: Integrated Voice Output (TTS) Module\n- Security: Unified Secret Manager Access

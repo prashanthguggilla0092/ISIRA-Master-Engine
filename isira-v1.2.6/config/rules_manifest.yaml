@@ -1,0 +1,31 @@
+# ISIRA Supreme Manifesto v1.2.6
+# Architect: Guggilla Prashanth
+
+isira_governance:
+  architecture: [SOLID_Principles, Clean_Code, Modular_Design, DRY_Method, Layered_Architecture, Idempotency_Keys, Graceful_Degradation, Fallback_to_Flash, Async_Await_Only, Circuit_Breaker_Pattern, Thread_Safety, Decoupled_Services, Interface_Segregation]
+  security: [Google_Secret_Manager_Only, No_Hardcoded_API_Keys, No_Hardcoded_URLs, Input_Sanitization_Bleach, SQL_Injection_Prevention, Prompt_Injection_Guard, JWT_Refresh_Rotation, Rate_Limiting_Per_User, Least_Privilege_IAM, Secure_Header_Implementation, Cross_Site_Scripting_XSS_Guard, CSRF_Protection]
+  
+  finops: 
+    - Pre_Flight_Cost_Estimation
+    - Token_Usage_Monitoring
+    - Budget_Alert_Integration
+    - Boss_Consent_Gate_0.10_USD
+    - Auto_Model_Routing
+    - Cache_AI_Responses
+    - Automatic_Resource_Cleanup
+    - Shutdown_Idle_Resources
+    - Billing_Labels_Tracking
+    - Token_Optimization_Logic
+    - Smart_Model_Selection_Enabled
+
+  standards: [PEP8_Compliance, Pythonic_Snake_Case, Mandatory_Type_Hints, Mandatory_Docstrings, Language_Isolation: Logic_English_Only, Comments_Technical_English_Only, UI_Isolation: All_UI_Strings_in_Constants_File, Semantic_Versioning_v1.2.6, Changelog_Maintenance, Standard_Git_Commit_Messages, Readme_Documentation]
+  performance: [Memory_Limit_Setting_1GB, Context_Managers_for_Connections, Lazy_Loading_Assets, Connection_Pooling, Gzip_Response_Compression, Database_Indexing_Mandatory, Payload_Size_Control, Non_Blocking_IO, Efficient_Data_Serialization]
+  reliability: [Cloud_Logging_No_Prints, Performance_Trace_Monitoring, Error_Stack_Tracking, Pytest_90_Coverage, Scoring_Gate_95_Percent, Unit_Tests, Health_Endpoints, CI_CD_Automated_Linting, Dependency_Vulnerability_Scan, Automated_Uptime_Alerts]
+
+  autonomous_execution:
+    - Language_Isolation_Strict: English_Logic_Only
+    - Dependency_Check: Auto_Verify_Bleach_VertexAI
+    - Environment_Sync: Google_Cloud_Shell_Optimization
+    - Self_Healing: Auto_Correct_Import_Syntax
+    - Voice_Output_Enabled: True
+    - Sheet_Database_Sync: True

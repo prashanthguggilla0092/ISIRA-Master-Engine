@@ -1,0 +1,14 @@
+service-account-key.json
+.env
+.venv/
+venv/
+myenv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+.DS_Store
+
+# Runtime files
+backend.log
+uploads/
+*.log
