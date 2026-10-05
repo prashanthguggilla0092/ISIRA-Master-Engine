@@ -12,3 +12,6 @@ google-cloud-aiplatform==1.56.0
 audio-recorder-streamlit==0.0.10
 Pillow==10.4.0
 toml==0.10.2
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20

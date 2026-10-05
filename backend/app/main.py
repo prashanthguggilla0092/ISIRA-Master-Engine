@@ -2,7 +2,7 @@ import json
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from .gemini_service import generate_response
+from .gemini_service import generate_response, generate_response_stream
 from .sheets_service import get_project_context
 
 app = FastAPI(
@@ -64,6 +64,41 @@ def chat(request: ChatRequest):
     )
 
     return ChatResponse(response=response)
+
+@app.post("/chat/stream")
+def chat_stream(request: ChatRequest):
+    history = [
+        {
+            "role": item.role,
+            "content": item.content,
+        }
+        for item in request.history
+    ]
+
+    project_context = (
+        get_project_context(request.project)
+        if request.project
+        else ""
+    )
+
+    response_message = request.message
+
+    if project_context:
+        response_message = (
+            f"Project Context:\n{project_context}\n\n"
+            f"User Request:\n{request.message}"
+        )
+
+    from fastapi.responses import StreamingResponse
+
+    return StreamingResponse(
+        generate_response_stream(
+            response_message,
+            history,
+        ),
+        media_type="text/plain; charset=utf-8",
+    )
+
 
 from fastapi import File, Form, UploadFile
 from .image_service import analyze_image

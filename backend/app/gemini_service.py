@@ -46,3 +46,48 @@ def generate_response(message: str, history: list[dict] | None = None) -> str:
     )
 
     return response.text
+
+
+def generate_response_stream(
+    message: str,
+    history: list[dict] | None = None,
+):
+    contents = []
+
+    if history:
+        for item in history:
+            role = item.get("role", "user")
+            content = item.get("content", "")
+
+            if content:
+                contents.append(
+                    Content(
+                        role="user" if role == "user" else "model",
+                        parts=[Part.from_text(content)],
+                    )
+                )
+
+    contents.append(
+        Content(
+            role="user",
+            parts=[Part.from_text(message)],
+        )
+    )
+
+    response_stream = model.generate_content(
+        contents,
+        generation_config={
+            "max_output_tokens": 8192,
+            "temperature": 0.7,
+        },
+        stream=True,
+    )
+
+    for chunk in response_stream:
+        try:
+            text = chunk.text
+        except Exception:
+            text = ""
+
+        if text:
+            yield text
